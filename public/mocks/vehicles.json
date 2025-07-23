@@ -1,0 +1,6 @@
+[
+  { "brand": "Toyota", "models": ["Corolla", "Yaris", "Hilux"] },
+  { "brand": "Nissan", "models": ["Sentra", "Versa", "Frontier"] },
+  { "brand": "Kia", "models": ["Rio", "Sportage"] },
+  { "brand": "Hyundai", "models": ["Elantra", "Tucson"] }
+]

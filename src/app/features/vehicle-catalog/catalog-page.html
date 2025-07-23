@@ -1,0 +1,17 @@
+<div class="catalog-page">
+  <div class="catalog-page__content">
+
+    <div class="catalog-page__header">
+      <fa-icon [icon]="faCar" class="catalog-page__title-icon" />
+      <h1 class="catalog-page__title">
+        Catalogo de Vehiculos
+      </h1>
+      <span class="catalog-page__subtitle">Gestiona los vehiculos disponibles</span>
+    </div>
+
+    <div class="catalog-page__form-area">
+      <app-catalog-form class="catalog-page__form" (vehicleAdded)="onVehicleAdded($event)"></app-catalog-form>
+      <app-catalog-list class="catalog-page__list" [vehiclesList]="vehicles" (vehicleDelete)="onVechicleDelete($event)"></app-catalog-list>
+    </div>
+  </div>
+</div>

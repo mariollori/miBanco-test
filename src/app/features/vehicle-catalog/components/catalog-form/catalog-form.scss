@@ -1,0 +1,9 @@
+.catalog-form {
+  width: 100%;
+
+  &__form {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+}

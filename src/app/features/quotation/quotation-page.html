@@ -1,0 +1,21 @@
+<div class="price-page">
+  <h1 class="price-page__title">
+    <fa-icon [icon]="faCar" class="price-page__title-icon" />
+    Cotiza tu seguro vehicular
+  </h1>
+
+  <div class="price-page__main">
+
+    <div class="price-page__form-section">
+      <app-quotation-form (onQuotationAdded)="onQuotationAdded($event)"></app-quotation-form>
+    </div>
+
+    <div class="price-page__result-section">
+      <app-quotation-detail [quotationSummary]="quotationSummary"></app-quotation-detail>
+    </div>
+  </div>
+
+  <div class="price-page__history">
+    <app-quotation-history [quotationRecord]="quotationRecord"></app-quotation-history>
+  </div>
+</div>

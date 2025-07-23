@@ -1,0 +1,51 @@
+<div class="price-form">
+    <div class="price-form__header">
+        <h3 class="price-form__title">
+            Datos del Vehiculo y Conductor
+        </h3>
+        <span class="price-form__subtitle">
+            Ingresa la información para calcular tu prima anual
+        </span>
+    </div>
+    <form class="price-form__main" [formGroup]="quotationForm" >
+        <app-dropdown 
+        label="Marca" 
+        [options]="brands()" 
+        formControlName="brand"
+        [touched]="quotationForm.get('brand')?.touched"
+        [error]="quotationForm.get('brand')?.errors"
+        />
+        <app-dropdown 
+        label="Modelo" 
+        [options]="models()" 
+        formControlName="model"
+        [touched]="quotationForm.get('model')?.touched"
+        [error]="quotationForm.get('model')?.errors"
+        />
+        <app-dropdown 
+        label="Tipo de uso" 
+        [options]="tiposUso" 
+        formControlName="useType" 
+        [touched]="quotationForm.get('useType')?.touched"
+        [error]="quotationForm.get('useType')?.errors"
+        />
+        <app-input 
+        label="Año" 
+        placeholder="Ingrese un año" 
+        formControlName="year" 
+        [touched]="quotationForm.get('year')?.touched"
+        [error]="quotationForm.get('year')?.errors"
+        />
+        <app-input 
+        label="Edad" 
+        placeholder="Ingrese su edad" 
+        formControlName="age"
+        [touched]="quotationForm.get('age')?.touched"
+        [error]="quotationForm.get('age')?.errors"
+        />
+        
+        <app-button 
+        (onClick)="quotationAdded()" 
+        text="Cotizar" />
+    </form>
+</div>

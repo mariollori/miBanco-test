@@ -1,0 +1,16 @@
+<div class="input-container">
+  @if (label()) {
+    <label>{{ label() }}</label>
+  }
+  
+  <input
+    #text
+    [type]="type()"
+    [placeholder]="placeholder()"
+    [value]="value"
+    [disabled]="disabled"
+    (focus)="onTouched()"
+    (change)="onChange(text.value)"
+  />
+  <app-control-error [error]="error()" [touched]="touched()"/>
+</div> 

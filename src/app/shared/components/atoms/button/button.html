@@ -1,0 +1,10 @@
+ <button
+      class="btn"
+      type="button"
+      [disabled]="disabled()"
+      (click)="onClick.emit()"
+    >
+    <b>
+        {{text()}}
+    </b>
+    </button>

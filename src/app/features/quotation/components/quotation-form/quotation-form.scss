@@ -1,0 +1,21 @@
+.price-form{
+    display:flex ;
+    flex-direction: column;
+    gap: 1rem;
+
+ 
+    &__title{
+        margin-bottom: 0.2rem;
+    }
+    &__subtitle{
+        color: silver;
+        font-weight: 300;
+    }
+    &__main{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+

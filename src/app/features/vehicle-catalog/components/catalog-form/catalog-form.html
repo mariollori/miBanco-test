@@ -1,0 +1,28 @@
+<div class="catalog-form">
+    <form [formGroup]="formVehicle" class="catalog-form__form">
+        <app-dropdown 
+            [options]="brands()" 
+            [touched]="formVehicle.get('brand')?.touched"
+            [error]=" formVehicle.get('brand')?.errors"
+             placeholder="Selecciona"
+             formControlName="brand" 
+             label="Marca" />
+        <app-dropdown 
+            [options]="models()" 
+            label="Modelo"
+            placeholder="Selecciona" 
+            [touched]="formVehicle.get('model')?.touched"
+            [error]=" formVehicle.get('model')?.errors"
+            formControlName="model"/>
+
+        <app-input 
+            placeholder="Ingrese el precio base" 
+            type="number" 
+            label="Precio Base"
+            formControlName="base_price" 
+            [touched]="formVehicle.get('base_price')?.touched"
+            [error]=" formVehicle.get('base_price')?.errors"
+        />
+    </form>
+    <app-button (onClick)="submit()" text="Registrar" />
+</div>

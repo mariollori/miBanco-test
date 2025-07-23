@@ -1,0 +1,9 @@
+@if (message) {
+<div class="toast" >
+    <div class="toast__content">
+        <fa-icon [icon]="faInfoCircle" [ngClass]="alertClass" />
+        <p>{{ message }}</p>
+    </div>
+    <button class="toast__button" (click)="closeAlert()">×</button>
+</div>
+}

@@ -1,0 +1,8 @@
+  <section class="price-history">
+    <h3>Últimas cotizaciones</h3>
+    <div class="price-history__list">
+        @for(quotationSummary of quotationRecord();track $index){
+            <app-quotation-detail  [quotationSummary]="quotationSummary" /> 
+        }
+    </div>
+  </section>

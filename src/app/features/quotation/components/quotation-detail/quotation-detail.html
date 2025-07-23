@@ -1,0 +1,33 @@
+<div class="price-detail">
+
+    <div class="price-detail__result">
+        @if(quotationSummary()){
+
+        <div class="price-detail__result-row">
+            <b>Precio base:</b>
+            <span>{{ quotationSummary()!.quotation.vehicle.base_price | currency }}</span>
+        </div>
+        <div class="price-detail__result-row">
+            <b>Ajuste de año:</b>
+            <span>{{ quotationSummary()!.adjustment.adjusmentYear | currency }}</span>
+        </div>
+        <div class="price-detail__result-row">
+            <b>Ajuste de edad:</b>
+            <span> {{ quotationSummary()!.adjustment.adjusmentAge | currency }}</span>
+        </div>
+        <div class="price-detail__result-row">
+            <b>Ajuste de Tipo:</b>
+            <span> {{ quotationSummary()!.adjustment.adjusmentType | currency }}</span>
+        </div>
+        <div class="price-detail__result-row price-detail__result-row--total">
+            <b>Prima total:</b>
+            <span>{{ quotationSummary()!.totalAmount | currency }}</span>
+        </div>
+
+        }
+        @else{
+        <div class="price-detail__empty">Completa el formulario para ver tu cotización.</div>
+        }
+    </div>
+
+</div>

@@ -1,0 +1,49 @@
+.catalog-list {
+  width: 100%;
+
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    thead {
+      background-color: #f8f9fa;
+      border-bottom: 2px solid #dee2e6;
+
+      th {
+        padding: 0.75rem 1rem;
+        text-align: left;
+        font-weight: 600;
+        color: #495057;
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid #e9ecef;
+        transition: background-color 0.15s ease;
+
+        &:hover {
+          background-color: #f8f9fa;
+        }
+
+        td {
+          padding: 0.75rem 1rem;
+          vertical-align: middle;
+
+          &:nth-child(3) {
+            color: #28a745;
+            font-weight: 500;
+          }
+        }
+
+        button{
+          padding: 0.25rem;
+          border: none;
+        }
+      }
+    }
+  }
+}

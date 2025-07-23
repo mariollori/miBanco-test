@@ -1,0 +1,26 @@
+<div class="catalog-list">
+    <table class="catalog-list__table">
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Precio Base</th>
+                <th>Option</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of vehiclesList(); track item.id) {
+            <tr>
+                <td>{{item.brand}}</td>
+                <td>{{item.model}}</td>
+                <td>{{item.base_price | currency }}</td>
+                <td>
+                    <button (click)="onDeleteItem(item.id)">
+                        <fa-icon [icon]="faTrash" style="color: red;" />
+                    </button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

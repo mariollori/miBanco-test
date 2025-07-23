@@ -1,0 +1,39 @@
+<div class="dropdown">
+  @if (label()) {
+  <label [for]="label()" class="dropdown__label">{{ label() }}</label>
+  }
+  <div class="dropdown__container" #dropdownTrigger>
+
+    <div class="dropdown__trigger" 
+      (click)="toggleDropdown()" 
+      [class.dropdown__trigger--disabled]="disabled"
+      [class.dropdown__trigger--open]="isOpen()">
+  
+      <span class="dropdown__text">
+        @if (!selectedOption()) {
+          {{ placeholder() }}
+        } @else {
+          {{ getSelectedLabel() }}
+        }
+      </span>
+      <span class="dropdown__icon">▼</span>
+    </div>
+  
+    @if (isOpen()) {
+      <div class="dropdown__menu" #dropdownMenu>
+        <div class="dropdown__options">
+          @for (option of options(); track $index) {
+            <div 
+              class="dropdown__option"
+              (click)="selectOption(option)"
+              [class.dropdown__option--selected]="isOptionSelected(option)"
+            >
+              {{ option[optionLabel()] || option }}
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+  <app-control-error [error]="error()" [touched]="touched()"/>
+</div>

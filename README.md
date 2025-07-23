@@ -13,9 +13,12 @@ Esta aplicación permite:
 ## Tecnologías
 
 - Angular 20+
+- NodeJs 22+
 - SCSS (con metodología BEM)
 - Reactive Forms
 - Angular Router (Lazy Loading)
+- Docker
+- Jazmine y Karma (testing)
 
 ## Estructura del Proyecto
 
@@ -36,14 +39,14 @@ src/
 
 - **features/quotation/**: Módulo de cotización de seguros.
 - **features/vehicle-catalog/**: Módulo de administración de vehículos.
-- **shared/**: Componentes reutilizables, mocks y utilidades.
+- **shared/**: Componentes reutilizables, mocks y utilidades.(Atomic Design)
 - **layout/**: Componentes de layout y rutas principales.
 
 ## Instalación
 
 1. Clona el repositorio:
    ```sh
-   git clone https://github.com/tu-usuario/mi-banco-test.git
+   git clone https://github.com/mariollori/miBanco-test.git
    cd mi-banco-test
    ```
 
@@ -74,6 +77,19 @@ Los archivos de salida estarán en la carpeta `dist/`.
 npm test
 ```
 
+### Docker
+
+En la raiz del proyecto ejecutar (construye imagen)
+```sh
+docker build -t angular-container .
+```
+Levantar servidor en el puerto 80
+
+```sh
+docker container run -p 80:80 angular-container
+```
+
+Ingresar a localhost
 
 ## Convenciones de estilos
 
@@ -98,3 +114,7 @@ npm test
 - Catalog Page
 
 ![alt text](/public/readme/image-2.png)
+
+- Docker Container
+
+![alt text](/public/readme/image4.png)

@@ -1,5 +1,5 @@
 import { Component, inject, OnDestroy, OnInit, output, signal } from '@angular/core';
-import { FormBuilder, FormGroup, Validators,ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
 import { Input } from '@components/molecules/input/input';
 import { Dropdown } from '@components/molecules/dropdown/dropdown';
@@ -40,7 +40,7 @@ export class CatalogForm implements OnInit, OnDestroy {
     this.formVehicle = this.formBuilder.group({
       model: ['', Validators.required],
       brand: ['', Validators.required],
-      base_price: [100, [Validators.required,Validators.min(100)]]
+      base_price: [100, [Validators.required, Validators.min(100)]]
     })
 
     this.formVehicle.get('brand')?.valueChanges
@@ -54,26 +54,37 @@ export class CatalogForm implements OnInit, OnDestroy {
   getBrands() {
     this.vehiclesApiService.getBrands().pipe(
       takeUntil(this.$destroy)
-    ).subscribe((val) => {
-      this.brands.set(val)
-    })
+    ).subscribe({
+      next: (val) => {
+        this.brands.set(val)
+      },
+      error: (err) => {
+      }
+    }
+    )
   }
 
   getModels(brand: string) {
     this.vehiclesApiService.getModelsByBrand(brand).pipe(
       takeUntil(this.$destroy)
-    ).subscribe((val) => {
-      this.models.set(val)
-    });
+    ).subscribe({
+      next: (val) => {
+        this.models.set(val)
+      },
+      error: (err) => {
+      }
+    }
+
+    );
 
   }
 
 
   submit() {
-    if (!this.formVehicle.valid){
+    if (!this.formVehicle.valid) {
       this.alertService.error('Necesitas completar todos los campos')
       return;
-    } 
+    }
     this.vehicleAdded.emit(this.formVehicle.value)
   }
 

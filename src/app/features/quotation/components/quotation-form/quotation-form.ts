@@ -57,8 +57,8 @@ export class QuotationForm implements OnInit, OnDestroy {
   }
 
   quotationAdded() {
-    if (this.quotationForm.invalid){
-      this.alertService.error('Necesita completar todos los campos'); 
+    if (this.quotationForm.invalid) {
+      this.alertService.error('Necesita completar todos los campos');
       return;
     }
     this.onQuotationAdded.emit(this.quotationForm.value)
@@ -69,17 +69,27 @@ export class QuotationForm implements OnInit, OnDestroy {
   getBrands() {
     this.vehicleApiService.getBrands().pipe(
       takeUntil(this.$destroy)
-    ).subscribe((val) => {
-      this.brands.set(val)
-    })
+    ).subscribe({
+      next: (val) => {
+        this.brands.set(val)
+      },
+      error: (err) => {
+      }
+    }
+    )
   }
 
   getModels(brand: string) {
     this.vehicleApiService.getModelsByBrand(brand).pipe(
       takeUntil(this.$destroy)
-    ).subscribe((val) => {
-      this.models.set(val)
-    });
+    ).subscribe({
+      next: (val) => {
+        this.models.set(val)
+      },
+      error: (err) => {
+      }
+    }
+    )
 
   }
 

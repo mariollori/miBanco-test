@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MiBanco-test": {
+    "mibanco-test": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -31,7 +31,9 @@
             ],
             "styles": [
               "src/styles.scss"
-            ]
+            ],
+            "outputPath":"dist/mibanco-test"
+            
           },
           "configurations": {
             "production": {

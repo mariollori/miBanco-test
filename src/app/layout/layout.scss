@@ -3,9 +3,34 @@
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    
+    overflow-x: hidden;
+
     .content {
-        flex:1;
-        background-color: #f5f7f9;
+        flex: 1;
+        background: var(--color-brand-default-bg);
     }
+    .header{
+       position: sticky;
+       top: 0;
+       z-index: 10;
+    }
+
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: silver;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
 }

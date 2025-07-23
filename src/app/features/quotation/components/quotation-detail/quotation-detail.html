@@ -1,27 +1,38 @@
 <div class="price-detail">
+    <div class="price-detail__header">
+        <h3 class="price-detail__title">
+            Resultado de la Cotizacion
+        </h3>
+        <span class="price-detail__subtitle">
+            Desglose de tu prima anual estimada
+        </span>
+    </div>
 
     <div class="price-detail__result">
         @if(quotationSummary()){
 
-        <div class="price-detail__result-row">
-            <b>Precio base:</b>
-            <span>{{ quotationSummary()!.quotation.vehicle.base_price | currency }}</span>
-        </div>
-        <div class="price-detail__result-row">
-            <b>Ajuste de año:</b>
-            <span>{{ quotationSummary()!.adjustment.adjusmentYear | currency }}</span>
-        </div>
-        <div class="price-detail__result-row">
-            <b>Ajuste de edad:</b>
-            <span> {{ quotationSummary()!.adjustment.adjusmentAge | currency }}</span>
-        </div>
-        <div class="price-detail__result-row">
-            <b>Ajuste de Tipo:</b>
-            <span> {{ quotationSummary()!.adjustment.adjusmentType | currency }}</span>
-        </div>
-        <div class="price-detail__result-row price-detail__result-row--total">
-            <b>Prima total:</b>
+        <div class="price-detail__result-row--total">
+            <span>Prima total</span>
             <span>{{ quotationSummary()!.totalAmount | currency }}</span>
+        </div>
+        <h4>Desglose de Cálculo</h4>
+        <div>
+            <div class="price-detail__result-row">
+                <span>Precio base</span>
+                <span>{{ quotationSummary()!.quotation.vehicle.base_price | currency }}</span>
+            </div>
+            <div class="price-detail__result-row">
+                <span>Ajuste de año ({{quotationSummary()!.quotation.year }})</span>
+                <span>{{ quotationSummary()!.adjustment.adjusmentYear | currency }}</span>
+            </div>
+            <div class="price-detail__result-row">
+                <span>Ajuste de edad ({{quotationSummary()!.quotation.age }})</span>
+                <span> {{ quotationSummary()!.adjustment.adjusmentAge | currency }}</span>
+            </div>
+            <div class="price-detail__result-row">
+                <span>Ajuste de Tipo ({{quotationSummary()!.quotation.useType }})</span>
+                <span> {{ quotationSummary()!.adjustment.adjusmentType | currency }}</span>
+            </div>
         </div>
 
         }

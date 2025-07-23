@@ -20,10 +20,14 @@
       text-decoration: none;
       font-weight: 600;
       color: silver;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      transition: all .3s ease;
     }
 
     a.active {
-      color: var(--color-brand-primary)
+      background: var(--gradient-brand-primary);
+      color: white;
     }
   }
 }

@@ -63,10 +63,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "MiBanco-test:build:production"
+              "buildTarget": "mibanco-test:build:production"
             },
             "development": {
-              "buildTarget": "MiBanco-test:build:development"
+              "buildTarget": "mibanco-test:build:development"
             }
           },
           "defaultConfiguration": "development"

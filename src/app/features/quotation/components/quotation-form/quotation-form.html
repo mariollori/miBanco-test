@@ -33,17 +33,19 @@
         label="Año" 
         placeholder="Ingrese un año" 
         formControlName="year" 
+        type="number"
         [touched]="quotationForm.get('year')?.touched"
         [error]="quotationForm.get('year')?.errors"
         />
         <app-input 
         label="Edad" 
         placeholder="Ingrese su edad" 
+        type="number"
         formControlName="age"
         [touched]="quotationForm.get('age')?.touched"
         [error]="quotationForm.get('age')?.errors"
         />
-        
+       
         <app-button 
         (onClick)="quotationAdded()" 
         text="Cotizar" />

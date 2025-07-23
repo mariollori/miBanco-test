@@ -1,4 +1,4 @@
-.price-history{
+.price-record{
 
     display: flex;
     flex-direction: column;
@@ -10,5 +10,11 @@
         flex-wrap: wrap;
         gap: 2rem;
 
+    }
+    &__item{
+        border: 1px solid aliceblue;
+        padding: 0.85rem;
+        flex:1;
+        border-radius: 0.5rem;
     }
 }

@@ -109,7 +109,7 @@ Ingresar a localhost
 
 - Quotation Page
 
-![alt text](/public/readme/image-1.png)
+![alt text](image.png)
 
 - Catalog Page
 

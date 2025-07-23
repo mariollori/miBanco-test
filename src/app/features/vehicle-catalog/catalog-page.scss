@@ -9,7 +9,11 @@
     align-items: center;
     width: 4rem;
     height: 4rem;
+    font-size: 2rem;
     color: white
+  }
+  &__title{
+    text-align: center;
   }
 
   &__header {
@@ -21,7 +25,6 @@
   }
 
   &__content {
-    padding: 1rem;
     max-width: 1440px;
     margin: 0 auto;
     border-radius: 1rem;

@@ -1,49 +1,73 @@
- .price-detail{
-    display: flex;
-    background-color: white;
-    height: 100%;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+ .price-detail {
+     display: flex;
+     background-color: white;
+     height: 100%;
+     border-radius: 0.5rem;
+     flex-direction: column;
+
+     &__subtitle {
+         color: grey;
+         font-weight: 400;
+         font-size: 0.90rem;
+     }
 
      &__result {
          display: flex;
          width: 100%;
+         flex:1;
          margin-top: 1rem;
-         justify-content: space-between;
+         justify-content: space-around;
          flex-direction: column;
          gap: 0.75rem;
-    
-    
+
+
          &-row {
-             display: flex;
+             display: flex; 
              justify-content: space-between;
-    
+             padding: 1rem;
+             border-bottom: 1px solid silver;
+
+             :nth-child(1){
+                color: grey;
+             }
+             :nth-child(2){
+                color: var(--color-brand-primary);
+                font-weight: 500;
+             }
+
              &--total {
                  background: var(--gradient-brand-primary);
                  padding: 1rem;
+                 display: flex;
+                 justify-content: space-between;
+                 align-items: center;
                  flex-direction: column;
                  gap: 1rem;
                  border-radius: 0.75rem;
-             }
-    
-             ul {
-                 list-style: none;
-    
-                 li {
-                     margin-left: 1rem;
+
+                 :nth-child(1){
+                    font-weight: 700;
+                    color: white;
+                 }
+                 :nth-child(2){
+                    font-weight: 700;
+                    color: white;
+                    font-size: 2rem;
                  }
              }
          }
-    
-    
+
+
      }
-     &__empty{
-        width: 100%;
-        padding: 2rem;
-        text-align: center;
-        background-color: var(--color-brand-primary-bg);
-        border-radius: 0.75rem;
+
+     &__empty {
+         width: 100%;
+         padding: 2rem;
+         text-align: center;
+         background-color: var(--color-brand-default-bg);
+         border-radius: 0.75rem;
+         font-weight: 500;
+         font-size: 0.90rem;
+         color: gray;
      }
  }
- 

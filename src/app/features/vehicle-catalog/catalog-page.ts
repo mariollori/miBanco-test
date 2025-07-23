@@ -19,8 +19,9 @@ export class CatalogPage implements OnInit {
 
   faCar = faCar
 
-  vehicles:Vehicle[] = []
+  vehicles:Vehicle[] = [];
   vehicleService = inject(VehicleService);
+  
   
 
   ngOnInit() {
